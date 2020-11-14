@@ -1,4 +1,4 @@
-package kseidl;
+package kseidl.Cipher;
 
 /**
  * Implements Cipher um Text zu entschluesseln un verschluesseln

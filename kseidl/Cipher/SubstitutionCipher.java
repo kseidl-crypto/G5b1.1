@@ -1,4 +1,4 @@
-package kseidl;
+package kseidl.Cipher;
 
 public class SubstitutionCipher extends  MonoAlphabeticCipher{
 

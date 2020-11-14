@@ -1,4 +1,4 @@
-package kseidl;
+package kseidl.Cipher;
 
 /**
  * Interface um zu codieren
