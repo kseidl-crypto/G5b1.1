@@ -25,7 +25,13 @@ public class MonoAlphabeticCipher implements Cipher{
         String standard = "abcdefghijklmnopqrstuvwxyzäöüß";
         String ergebnis ="";
         for(int i = 0; i < text.length(); i++){
-            ergebnis += this.secretAlphabet.charAt(standard.indexOf(text.charAt(i)));
+            if(standard.indexOf(text.charAt(i)) != -1){
+                ergebnis += this.secretAlphabet.charAt(standard.indexOf(text.charAt(i)));
+            }
+            else{
+                ergebnis += text.charAt(i);
+            }
+
         }
         return ergebnis;
     }
@@ -34,7 +40,12 @@ public class MonoAlphabeticCipher implements Cipher{
         String standard = "abcdefghijklmnopqrstuvwxyzäöüß";
         String ergebnis ="";
         for(int i = 0; i < text.length(); i++){
-            ergebnis += standard.charAt(this.secretAlphabet.indexOf(text.charAt(i)));
+            if(secretAlphabet.indexOf(text.charAt(i)) != -1) {
+                ergebnis += standard.charAt(this.secretAlphabet.indexOf(text.charAt(i)));
+            }
+            else{
+                ergebnis += text.charAt(i);
+            }
         }
         return ergebnis;
     }
