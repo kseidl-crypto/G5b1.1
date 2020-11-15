@@ -1,11 +1,25 @@
 package kseidl.Cipher;
 
+/**
+ * erbt von MonoAlphabeticCipher
+ * @author kseidl
+ * @version 15-11-20
+ */
 public class SubstitutionCipher extends  MonoAlphabeticCipher{
 
+    /**
+     * setzt secretAlphabet
+     * @param secretAlphabet übernimmt den Schluessel
+     */
     public SubstitutionCipher(String secretAlphabet){
         setSecretAlphabet(secretAlphabet);
     }
 
+    /**
+     * ueberprueft den Schluessel, obs groß genug ist und kein Buchstabe doppelt vor kommt
+     * setzt Schluessel in Supermethode
+     * @param secretAlphabet übernimmt den Schluessel
+     */
     public void setSecretAlphabet(String secretAlphabet){
         String standard = "abcdefghijklmnopqrstuvwxyzäöüß";
         String buchstaben ="";

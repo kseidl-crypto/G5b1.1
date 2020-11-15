@@ -2,6 +2,11 @@ package kseidl.Cipher;
 
 import javax.swing.*;
 
+/**
+ * testet SubstitutionCipher
+ * @author kseidl
+ * @version 15-11-20
+ */
 public class Main {
     public static void main(String[] args) {
         SubstitutionCipher s ;
