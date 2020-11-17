@@ -1,7 +1,7 @@
 package kseidl.Cipher.Modell;
 
 /**
- * setzt Schluessel durch ein Wort
+ * setzt Schluessel durch Wort
  * @author kseidl
  * @version 17-11-20
  */
