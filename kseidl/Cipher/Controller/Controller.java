@@ -27,20 +27,11 @@ public class Controller {
             String s = e.getActionCommand();
 
             if(s.equals("text")){
+                System.out.print("Ja");
                 String text = layout.getText();
                 if(layout.shiftSelected()){
-                    SubstitutionCipher s1 ;
-                    String schluessel= JOptionPane.showInputDialog("Bitte Zahl eingeben");
-                    s1 = new SubstitutionCipher(schluessel);
-
-                    String vtext = s1.encrypt(text);
-
-                    JOptionPane.showMessageDialog(null, vtext+"");
-                    JOptionPane.showMessageDialog(null, s1.decrypt(vtext));
-                }
-                else if(layout.selectSelected()){
                     ShiftCipher s2;
-                    int i = Integer.parseInt(JOptionPane.showInputDialog("bitte Schluessel eingeben"));
+                    int i = Integer.parseInt(JOptionPane.showInputDialog("Bitte Zahl eingeben"));
                     s2 = new ShiftCipher(i);
 
                     String vtext2 = s2.encrypt(text);
@@ -49,8 +40,20 @@ public class Controller {
                     JOptionPane.showMessageDialog(null, s2.decrypt(vtext2));
                 }
 
+                else if(layout.selectSelected()){
+                    SubstitutionCipher s1 ;
+                    String schluessel= JOptionPane.showInputDialog("Bitte eigenen Schluessel eingeben");
+                    s1 = new SubstitutionCipher(schluessel);
+
+                    String vtext = s1.encrypt(text);
+
+                    JOptionPane.showMessageDialog(null, vtext+"");
+                    JOptionPane.showMessageDialog(null, s1.decrypt(vtext));
+                }
+
 
             }
+
         }
 
     }

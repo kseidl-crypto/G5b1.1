@@ -37,6 +37,7 @@ public class Layout extends JPanel {
         this.schluessel.addActionListener(ah);
         this.schluessel.setActionCommand("schluessel");
         this.shift.addActionListener(ah);
+        this.shift.setActionCommand("shift");
 
 
 
@@ -49,6 +50,6 @@ public class Layout extends JPanel {
         return shift.isSelected();
     }
     public boolean selectSelected(){
-        return shift.isSelected();
+        return schluessel.isSelected();
     }
 }
