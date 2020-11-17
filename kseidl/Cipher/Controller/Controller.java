@@ -1,5 +1,6 @@
 package kseidl.Cipher.Controller;
 
+import kseidl.Cipher.Modell.KeywordCipher;
 import kseidl.Cipher.Modell.ShiftCipher;
 import kseidl.Cipher.Modell.SubstitutionCipher;
 import kseidl.Cipher.View.Frame;
@@ -59,13 +60,22 @@ public class Controller {
 
                 else if(layout.selectSelected()){
                     SubstitutionCipher s1 ;
-                    String schluessel= JOptionPane.showInputDialog("Bitte eigenen Schluessel eingeben");
+                    String schluessel= JOptionPane.showInputDialog("Bitte eigenen Schluessel eingeben (30 unterschiedliche Buchstaben)");
                     s1 = new SubstitutionCipher(schluessel);
 
                     String vtext = s1.encrypt(text);
 
                     JOptionPane.showMessageDialog(null, vtext+"");
                     JOptionPane.showMessageDialog(null, s1.decrypt(vtext));
+                }else if ( layout.keySelected()){
+                    KeywordCipher s3;
+
+                    String t = JOptionPane.showInputDialog("Wort, dass keine doppelten Buchstaben hat eingeben");
+                    s3= new KeywordCipher(t);
+
+                    String vt = s3.encrypt(text);
+                    JOptionPane.showMessageDialog(null, vt+"");
+                    JOptionPane.showMessageDialog(null, s3.decrypt(vt));
                 }
 
 

@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class Layout extends JPanel {
     private JTextField textfeld;
     private ButtonGroup check;
-    private JRadioButton schluessel, shift;
+    private JRadioButton schluessel, shift, keyword;
 
     public Layout(ActionListener ah){
         this.setLayout(new BorderLayout());
@@ -23,17 +23,20 @@ public class Layout extends JPanel {
 
         this.check = new ButtonGroup();
 
+        this.keyword = new JRadioButton("Schluesselwort");
         this.schluessel = new JRadioButton("eigener Schluessel", true);
         this.shift = new JRadioButton("ShiftCipher");
 
         this.check.add(this.schluessel);
         this.check.add(this.shift);
+        this.check.add(this.keyword);
 
 
         JPanel grid = new JPanel(new GridLayout(2,4, 10, 4));
 
         grid.add(this.schluessel);
         grid.add(this.shift);
+        grid.add(this.keyword);
 
         this.add(grid, BorderLayout.PAGE_END);
 
@@ -43,6 +46,8 @@ public class Layout extends JPanel {
         this.schluessel.setActionCommand("schluessel");
         this.shift.addActionListener(ah);
         this.shift.setActionCommand("shift");
+        this.keyword.addActionListener(ah);
+        this.keyword.setActionCommand("key");
 
 
 
@@ -71,4 +76,10 @@ public class Layout extends JPanel {
     public boolean selectSelected(){
         return schluessel.isSelected();
     }
+
+    /**
+     *
+     * @return ob Keyword selected ist
+     */
+    public boolean keySelected(){ return keyword.isSelected();}
 }

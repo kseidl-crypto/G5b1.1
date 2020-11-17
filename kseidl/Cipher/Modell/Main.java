@@ -9,29 +9,17 @@ import javax.swing.*;
  */
 public class Main {
     public static void main(String[] args) {
-        SubstitutionCipher s ;
-        String text = JOptionPane.showInputDialog("Text eingeben");
-        String schluessel= "";
-        do{
-            schluessel = JOptionPane.showInputDialog("Schlüssel");
-            s = new SubstitutionCipher(schluessel);
 
-        }while (!schluessel.equals(s.getSecretAlphabet()));
 
-        String vtext = s.encrypt(text);
+        KeywordCipher s3;
+        String t2 = JOptionPane.showInputDialog("Text eingeben");
 
-        JOptionPane.showMessageDialog(null, vtext+"");
-        JOptionPane.showMessageDialog(null, s.decrypt(vtext));
+        String t = JOptionPane.showInputDialog("Wort, dass keine doppelten Buchstaben hat eingeben");
+        s3= new KeywordCipher(t);
 
-        ShiftCipher s2;
-        String text2 = JOptionPane.showInputDialog("Text");
-        int i = Integer.parseInt(JOptionPane.showInputDialog("Zahl"));
-        s2 = new ShiftCipher(i);
-
-        String vtext2 = s2.encrypt(text2);
-
-        JOptionPane.showMessageDialog(null, vtext2+"");
-        JOptionPane.showMessageDialog(null, s2.decrypt(vtext2));
+         String vt = s3.encrypt(t2);
+        JOptionPane.showMessageDialog(null, vt+"");
+        JOptionPane.showMessageDialog(null, s3.decrypt(vt));
 
     }
 }
