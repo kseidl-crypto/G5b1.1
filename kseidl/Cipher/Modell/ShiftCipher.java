@@ -1,5 +1,10 @@
-package kseidl.Cipher;
+package kseidl.Cipher.Modell;
 
+/**
+ * Verschluesselung durch Caesercodierung
+ * @author  kseidl
+ * @version 16-11-20
+ */
 public class ShiftCipher extends  MonoAlphabeticCipher{
 
     public ShiftCipher(int value){

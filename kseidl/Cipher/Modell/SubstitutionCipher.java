@@ -1,4 +1,4 @@
-package kseidl.Cipher;
+package kseidl.Cipher.Modell;
 
 /**
  * erbt von MonoAlphabeticCipher
