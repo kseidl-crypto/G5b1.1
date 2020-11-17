@@ -44,7 +44,7 @@ public class Controller {
             String s = e.getActionCommand();
 
             if(s.equals("text")){
-                System.out.print("Ja");
+
                 String text = layout.getText();
                 if(layout.shiftSelected()){
                     ShiftCipher s2;
