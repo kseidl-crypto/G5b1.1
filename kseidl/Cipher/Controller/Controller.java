@@ -9,6 +9,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controller zeigt gui an und lässt verschluesselung wählen
+ * @author kseidl
+ * @version 17-11-20
+ */
+
 public class Controller {
     private Layout layout;
     private Frame frame;
@@ -17,11 +23,22 @@ public class Controller {
         new Controller();
     }
 
+    /**
+     * Konstruktor für Controller
+     */
     public Controller() {
         this.layout = new Layout(new ActionHandler());
         this.frame = new Frame(this.layout);
     }
+
+    /**
+     * Klasse ActionHandler, die von ActionListener erbt
+     */
     private class ActionHandler implements ActionListener{
+        /**
+         * überschreibt methode actionPerformed
+         * @param e bekommt das actionevent
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             String s = e.getActionCommand();

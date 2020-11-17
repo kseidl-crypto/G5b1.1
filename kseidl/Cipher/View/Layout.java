@@ -5,6 +5,11 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * zeigt Layout an
+ * @author kseidl
+ * @version 17-11-20
+ */
 public class Layout extends JPanel {
     private JTextField textfeld;
     private ButtonGroup check;
@@ -42,13 +47,27 @@ public class Layout extends JPanel {
 
 
     }
+
+    /**
+     *
+     * @return den Text aus Textfeld
+     */
     public String getText() {
         return textfeld.getText();
     }
 
+    /**
+     *
+     * @return ob shiftbutton selected ist
+     */
     public boolean shiftSelected(){
         return shift.isSelected();
     }
+
+    /**
+     *
+     * @return ob schluesselbutton selected ist
+     */
     public boolean selectSelected(){
         return schluessel.isSelected();
     }
