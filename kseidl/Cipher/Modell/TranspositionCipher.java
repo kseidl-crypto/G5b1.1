@@ -1,23 +1,40 @@
 package kseidl.Cipher.Modell;
 
 /**
- *
+ * TranspositionCipher
+ * @author kseidl
+ * @version 19-11-20
  */
 public class TranspositionCipher implements Cipher{
     private int transpositionLevel;
 
+    /**
+     *
+     * @param transpositionLevel Konstruktor
+     */
     public TranspositionCipher(int transpositionLevel){
         if(transpositionLevel <=0){
             return;
         }
         this.transpositionLevel = transpositionLevel;
     }
+
+    /**
+     *
+     * @param transpositionLevel setzt Wert
+     */
     public void setTranspositionLevel(int transpositionLevel){
         if(transpositionLevel <= 0){
             return;
         }
         this.transpositionLevel = transpositionLevel;
     }
+
+    /**
+     * verschluesselt Text
+     * @param text übernimmt text
+     * @return gibt den verschluesselten Text zurück
+     */
     public String encrypt(String text) {
         String[] s = new String[transpositionLevel];
 
@@ -36,6 +53,11 @@ public class TranspositionCipher implements Cipher{
 
     }
 
+    /**
+     * entschluesselt Text
+     * @param text übernimmt text
+     * @return gibt entschluesselten Text zurück
+     */
 
     public String decrypt(String text) {
         String[] s = text.split("\n");
