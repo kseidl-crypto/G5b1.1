@@ -57,9 +57,7 @@ public class Controller {
 
                     JOptionPane.showMessageDialog(null, vtext2+"");
                     JOptionPane.showMessageDialog(null, s2.decrypt(vtext2));
-                }
-
-                else if(layout.selectSelected()){
+                }else if(layout.selectSelected()){
                     SubstitutionCipher s1 ;
                     String schluessel= JOptionPane.showInputDialog("Bitte eigenen Schluessel eingeben (30 unterschiedliche Buchstaben)");
                     s1 = new SubstitutionCipher(schluessel);
