@@ -3,6 +3,7 @@ package kseidl.Cipher.Controller;
 import kseidl.Cipher.Modell.KeywordCipher;
 import kseidl.Cipher.Modell.ShiftCipher;
 import kseidl.Cipher.Modell.SubstitutionCipher;
+import kseidl.Cipher.Modell.TranspositionCipher;
 import kseidl.Cipher.View.Frame;
 import kseidl.Cipher.View.Layout;
 
@@ -76,6 +77,13 @@ public class Controller {
                     String vt = s3.encrypt(text);
                     JOptionPane.showMessageDialog(null, vt+"");
                     JOptionPane.showMessageDialog(null, s3.decrypt(vt));
+                }else if( layout.tcSelected()){
+                    TranspositionCipher t;
+                    int i = Integer.parseInt(JOptionPane.showInputDialog("Zahl"));
+                    t = new TranspositionCipher(i);
+                    String tt = t.encrypt(text);
+                    JOptionPane.showMessageDialog(null, tt);
+                    JOptionPane.showMessageDialog(null, t.decrypt(tt));
                 }
 
 

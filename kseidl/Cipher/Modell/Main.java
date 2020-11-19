@@ -9,17 +9,12 @@ import javax.swing.*;
  */
 public class Main {
     public static void main(String[] args) {
-
-
-        KeywordCipher s3;
-        String t2 = JOptionPane.showInputDialog("Text eingeben");
-
-        String t = JOptionPane.showInputDialog("Wort, dass keine doppelten Buchstaben hat eingeben");
-        s3= new KeywordCipher(t);
-
-         String vt = s3.encrypt(t2);
-        JOptionPane.showMessageDialog(null, vt+"");
-        JOptionPane.showMessageDialog(null, s3.decrypt(vt));
+       TranspositionCipher t;
+        String text = JOptionPane.showInputDialog("Text eingeben");
+        int i = Integer.parseInt(JOptionPane.showInputDialog("Zahl"));
+        t = new TranspositionCipher(i);
+        System.out.println(t.encrypt(text));
+        System.out.println(t.decrypt(text));
 
     }
 }

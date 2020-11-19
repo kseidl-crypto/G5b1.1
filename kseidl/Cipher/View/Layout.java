@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class Layout extends JPanel {
     private JTextField textfeld;
     private ButtonGroup check;
-    private JRadioButton schluessel, shift, keyword;
+    private JRadioButton schluessel, shift, keyword, tc;
 
     public Layout(ActionListener ah){
         this.setLayout(new BorderLayout());
@@ -26,10 +26,12 @@ public class Layout extends JPanel {
         this.keyword = new JRadioButton("Schluesselwort");
         this.schluessel = new JRadioButton("eigener Schluessel", true);
         this.shift = new JRadioButton("ShiftCipher");
+        this.tc = new JRadioButton("Transposition Cipher");
 
         this.check.add(this.schluessel);
         this.check.add(this.shift);
         this.check.add(this.keyword);
+        this.check.add(this.tc);
 
 
         JPanel grid = new JPanel(new GridLayout(2,4, 10, 4));
@@ -37,6 +39,7 @@ public class Layout extends JPanel {
         grid.add(this.schluessel);
         grid.add(this.shift);
         grid.add(this.keyword);
+        grid.add(this.tc);
 
         this.add(grid, BorderLayout.PAGE_END);
 
@@ -48,6 +51,8 @@ public class Layout extends JPanel {
         this.shift.setActionCommand("shift");
         this.keyword.addActionListener(ah);
         this.keyword.setActionCommand("key");
+        this.tc.addActionListener(ah);
+        this.tc.setActionCommand("tc");
 
 
 
@@ -82,4 +87,10 @@ public class Layout extends JPanel {
      * @return ob Keyword selected ist
      */
     public boolean keySelected(){ return keyword.isSelected();}
+
+    /**
+     *
+     * @return ob TranspositionCipher gedrückt ist
+     */
+    public boolean tcSelected(){ return tc.isSelected();}
 }
